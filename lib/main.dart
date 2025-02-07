@@ -33,7 +33,7 @@ class _RentPredictionScreenState extends State<RentPredictionScreen> {
   String? predictedPrice;
 
   Future<void> predictRent() async {
-    final url = Uri.parse('http://127.0.0.1:5000/predict'); // Update for deployment
+    final url = Uri.parse('https://house-rent-prediction-eg9o.onrender.com/predict'); // Update for deployment
     final response = await http.post(
       url,
       headers: {'Content-Type': 'application/json'},
