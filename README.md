@@ -16,6 +16,12 @@ A few resources to get you started if this is your first Flutter project:
 
 ## Live Demo: (https://arifhossainrumi.github.io/)
 
+## Sample Input:
+- Area: 1200
+- Number of Bed: 4
+- Number of Bath: 3
+- Location: Mohammadpur Dhaka
+
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
