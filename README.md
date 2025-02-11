@@ -356,7 +356,30 @@ To make the model accessible, a **Flask API** was developed:
 - 🔄 **Integration**: The trained model was loaded using `joblib`.
 - ☁ **Hosting**: The API has been tested locally and deployed using Render & GitHub host.
 
+---
 
+### 🔧 API Summary
+
+The Flask API provides a `/predict` endpoint where users can send a JSON request with the following input:
+
+```python
+{
+  "Area": 1200,
+  "Bed": 3,
+  "Bath": 2,
+  "Location": "Mirpur Dhaka"
+}
+```
+
+The API processes the input and returns a predicted rental price:
+
+```json
+{
+  {
+  "predicted_price": 18000.50
+}
+}
+```
 
 ## 📌 Recommendations
 Based on the analysis and model performance, the following recommendations are made:
