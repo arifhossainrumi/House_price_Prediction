@@ -21,20 +21,42 @@ To ensure high-quality data, several preprocessing steps were performed:
 - ⚠ **Filtering outliers**: Analyzed and filtered unusual values for `Bed` and `Bath`.
 
 ## 📈 Exploratory Data Analysis (EDA)
-EDA was conducted to understand the data distribution and relationships between features. Key insights include:
-- 📊 **Price Distribution**: Analyzed how house prices vary across different locations.
-- 📌 **Correlation Analysis**: Checked relationships between area, price, and the number of bedrooms/bathrooms.
-- 📷 **Visualization**: Used Seaborn and Matplotlib to create:
-  - Histograms
-  - Scatter plots
-  - Box plots
-  - Heatmaps
+Exploratory Data Analysis (EDA) was performed to understand the dataset better and uncover patterns that influence rental prices in Dhaka. We identified trends and relationships between factors such as location, area, and price by analyzing different attributes. 
+
+**The following EDA steps were carried out:**
+
+- House Rent Price Distribution
+- Price Categories by Location
+- Price per Square Foot Distribution
+- Dhaka Rental Market Insights
+- Real Estate Correlation Analysis 
+- Rent Price Distribution Analysis
+- Area vs. Rent Price in Dhaka
+- Price Variation Across Locations in Dhaka
+- Trend of Rent Prices by Apartment Size
  
 ---
 
-## 🚀 Key Insights  
+
 
 ### 1️⃣ **House Rent Price Distribution**
+#### 📜 Code:
+```python
+sns.set_style("whitegrid")
+
+# Plot distribution of house rent prices
+plt.figure(figsize=(10, 5))
+sns.histplot(df1["Price"], bins=50, kde=True, color="blue")
+plt.xlabel("Rent Price (Taka)")
+plt.ylabel("Frequency")
+plt.title("Distribution of House Rent Prices in Dhaka")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](images/MonthlySales.png)
+
+#### 🚀 Key Insights  
 - Most house rents in Dhaka are concentrated in the lower range.  
 - Prices drop sharply after `100,000 Taka`, with very few homes priced over `300,000 Taka`.  
 
