@@ -38,7 +38,7 @@ Exploratory Data Analysis (EDA) was performed to better understand the dataset a
 - Area vs. Rent Price in Dhaka
 - Price Variation Across Locations in Dhaka
 - Trend of Rent Prices by Apartment Size
-- House Rent Analysis - Using location
+- House Rent Analysis - Mirpur, Dhaka
  
 ---
 
@@ -176,12 +176,10 @@ plt.show()
 #### 🚀 Key Insights  
 - 🏡 **Area, Bedrooms, and Bathrooms** are highly correlated (**0.75 - 0.81**) with **Price**, meaning bigger homes tend to cost more.  
 - 🔄 **Price per Sqft is weakly correlated with Area, Beds, and Baths** but strongly linked to **Price (0.76)**.  
-- ⚠️ **Duplicate column issue:** "price_per_sqft" appears twice, which may need fixing in the dataset.  
 
 #### 🔍 Key Takeaways  
 ✅ **Larger Homes = Higher Prices**  
-✅ **Price per Sqft drives overall pricing**  
-✅ **Dataset Cleanup Needed (Duplicate Column)**  
+✅ **Price per Sqft drives overall pricing**   
 
 ---
 
@@ -304,7 +302,7 @@ plt.show()
 
 ---
 
-##### 🔟 House Rent Analysis - using location
+##### 🔟 House Rent Analysis - Mirpur, Dhaka
 #### 📜 Code:
 ```python
 def plot_scatter_chart(df,Location):
@@ -341,12 +339,6 @@ This visualization shows rental prices in Mirpur, Dhaka, based on apartment size
 
 ---
 
-## 📈 Recommendations  
-- 💡 Encourage investment in **premium housing** to address the limited high-end market.  
-- 💡 Maintain a strong focus on **affordable housing** for mid-income families.  
-- 💡 Promote **balanced development** in both budget-friendly and premium segments.  
-
----
 
 ## 🤖 Model Development
 A machine learning model was developed using **Linear Regression** to predict house prices:
