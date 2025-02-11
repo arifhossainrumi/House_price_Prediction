@@ -1,5 +1,9 @@
 # House Price Prediction
-
+---
+### 🎯 Live Demo
+#### *You can check out the live demo of the deployed project here:*
+🔗 [Live Demo Link](https://arifhossainrumi.github.io/) 
+---
 ## 📌 Project Overview
 The House Price Prediction project aims to analyze rental prices in Dhaka and build a machine learning model to predict house prices based on various features. The project follows a structured approach that includes data collection, preprocessing, exploratory data analysis, model development, and deployment using a Flask API.
 
@@ -21,7 +25,7 @@ To ensure high-quality data, several preprocessing steps were performed:
 - ⚠ **Filtering outliers**: Analyzed and filtered unusual values for `Bed` and `Bath`.
 
 ## 📈 Exploratory Data Analysis (EDA)
-Exploratory Data Analysis (EDA) was performed to understand the dataset better and uncover patterns that influence rental prices in Dhaka. We identified trends and relationships between factors such as location, area, and price by analyzing different attributes. 
+Exploratory Data Analysis (EDA) was performed to better understand the dataset and uncover patterns that influence rental prices in Dhaka. By analyzing different attributes, trends and relationships between factors such as location, area, and price were identified. 
 
 **The following EDA steps were carried out:**
 
@@ -34,6 +38,7 @@ Exploratory Data Analysis (EDA) was performed to understand the dataset better a
 - Area vs. Rent Price in Dhaka
 - Price Variation Across Locations in Dhaka
 - Trend of Rent Prices by Apartment Size
+- House Rent Analysis - Using location
  
 ---
 
@@ -119,7 +124,7 @@ plt.show()
 
 ---
 
-### 📊 4 Dhaka Rental Market Insights
+### 4️⃣ Dhaka Rental Market Insights
 
 #### 📜 Code:
 ```python
@@ -138,19 +143,19 @@ plt.show()
 #### 🖼️ Visualization:
 ![House Rent Price Distribution](Images/pic4.png)
 
-## 🚀 Key Insights  
+#### 🚀 Key Insights  
 - 🏡 **Most Expensive Areas:** Baridhara (Block K & J), Gulshan (1 & 2), and DOHS (Banani, Mohakhali, Baridhara) dominate high-end rentals.  
 - 💰 **Luxury Rent Gap:** Top areas exceed **100,000 Taka**, while others drop significantly.  
 - 📉 **Mid-Tier Options:** Dhanmondi, Uttara, and Kakrail offer premium but more affordable rents.  
 
-## 🔍 Key Takeaways  
+#### 🔍 Key Takeaways  
 ✅ **Baridhara & Gulshan = Ultra-Luxury Living**  
 ✅ **DOHS Areas = High-End but Slightly Cheaper**  
 ✅ **Dhanmondi & Uttara = Affordable Premium Choices**  
 
 ---
 
-### 5 📊 Real Estate Correlation Analysis  
+### 5️⃣ Real Estate Correlation Analysis  
 
 #### 📜 Code:
 ```python
@@ -168,19 +173,19 @@ plt.show()
 #### 🖼️ Visualization:
 ![House Rent Price Distribution](Images/pic5.png)
 
-## 🚀 Key Insights  
+#### 🚀 Key Insights  
 - 🏡 **Area, Bedrooms, and Bathrooms** are highly correlated (**0.75 - 0.81**) with **Price**, meaning bigger homes tend to cost more.  
 - 🔄 **Price per Sqft is weakly correlated with Area, Beds, and Baths** but strongly linked to **Price (0.76)**.  
 - ⚠️ **Duplicate column issue:** "price_per_sqft" appears twice, which may need fixing in the dataset.  
 
-## 🔍 Key Takeaways  
+#### 🔍 Key Takeaways  
 ✅ **Larger Homes = Higher Prices**  
 ✅ **Price per Sqft drives overall pricing**  
 ✅ **Dataset Cleanup Needed (Duplicate Column)**  
 
 ---
 
-### 6 📊 Rent Price Distribution Analysis  
+### 6️⃣ Rent Price Distribution Analysis by Number of Bedrooms
 
 #### 📜 Code:
 ```python
@@ -197,20 +202,20 @@ plt.show()
 #### 🖼️ Visualization:
 ![House Rent Price Distribution](Images/pic6.png)
 
-## 🚀 Key Insights  
+#### 🚀 Key Insights  
 - 🏡 **More Bedrooms = Higher Rent:** Rent generally increases with the number of bedrooms.  
 - 🛁 **Bathrooms Impact Rent:** Higher bath counts (4, 6, 7) tend to have higher median rents.  
 - 🎯 **Wide Price Range:** Rent prices show significant variation, with many outliers, especially for 3-4 bedroom units.  
 - ⚠ **Luxury Segment:** Properties with **6+ bedrooms & 7 baths** have the highest rent, indicating a niche high-end market.  
 
-## 🔍 Key Takeaways  
+#### 🔍 Key Takeaways  
 ✅ **Larger Homes = Higher Rent**  
 ✅ **More Bathrooms Add Value**  
 ✅ **High Variability = Diverse Rental Market**  
 
 ---
 
-### 7 📊 Area vs. Rent Price in Dhaka
+### 7️⃣ Area vs. Rent Price in Dhaka
 
 #### 📜 Code:
 ```python
@@ -226,20 +231,20 @@ plt.show()
 #### 🖼️ Visualization:
 ![House Rent Price Distribution](Images/pic7.png)
 
-## 🚀 Key Insights
+#### 🚀 Key Insights
 - 📏 **Bigger Space = Higher Rent:** Larger apartments generally have higher rent prices.
 - 📈 **Positive Correlation:** The trend shows that as area (sqft) increases, rent also rises.
 - 🎯 **High Rent Variability:** Even for similar-sized properties, rent prices vary widely.
 - ⚠ **Luxury Segment:** Some large properties (4000+ sqft) command extremely high rents, indicating a premium market.
 
-## 🔍 Key Takeaways
+#### 🔍 Key Takeaways
 - ✅ **More Space Costs More**
 - ✅ **Rent Prices Aren’t Fixed—They Fluctuate**
 - ✅ **Luxury Properties Drive Up the Market**
 
 ---
 
-### 8 📊 Price Variation Across Locations in Dhaka
+### 8️⃣ Price Variation Across Locations in Dhaka
 
 #### 📜 Code:
 ```python
@@ -256,20 +261,20 @@ plt.show()
 #### 🖼️ Visualization:
 ![House Rent Price Distribution](Images/pic8.png)
 
-## 🚀 Key Insights
+#### 🚀 Key Insights
 - 🏙 **Location Matters:** Rent prices vary significantly based on location.
 - 📉 **Median Rent Differences:** Some areas have consistently lower median rents, while others, like Dhanmondi, show much higher price ranges.
 - 🎯 **High Outliers:** Several locations exhibit extreme price outliers, especially in upscale areas.
 - ⚖ **Price Dispersion:** Even within the same area, rent prices fluctuate, indicating diverse property options.
 
-## 🔍 Key Takeaways
+#### 🔍 Key Takeaways
 - ✅ **Location Strongly Affects Rent**
 - ✅ **Upscale Areas Have Higher Price Variability**
 - ✅ **Extreme Outliers Exist in Premium Markets**
 
 ---
 
-### 9 📊 Trend of Rent Prices by Apartment Size
+### 9️⃣ Trend of Rent Prices by Apartment Size
 
 #### 📜 Code:
 ```python
@@ -292,14 +297,14 @@ plt.show()
 - 🎯 **Steep Price Growth:** Beyond 3000 sqft, rent prices rise significantly, with some extreme spikes for premium properties.
 - ⚠ **Outliers in Large Apartments:** Some luxury apartments show rent prices that deviate far above the average trend.
 
-## 🔍 Key Takeaways
+#### 🔍 Key Takeaways
 - ✅ **Bigger Apartments Have Higher Rent**
 - ✅ **Luxury Market Shows High Price Variability**
 - ✅ **Steep Rent Growth Beyond 3000 sqft**
 
 ---
 
-### 10 📊 House Rent Analysis - by location
+##### 🔟 House Rent Analysis - using location
 #### 📜 Code:
 ```python
 def plot_scatter_chart(df,Location):
@@ -334,6 +339,8 @@ This visualization shows rental prices in Mirpur, Dhaka, based on apartment size
 - ✅ Rent Prices Are More Predictable for Smaller Units
 - ✅ Pricing for Larger Apartments Is Less Consistent
 
+---
+
 ## 📈 Recommendations  
 - 💡 Encourage investment in **premium housing** to address the limited high-end market.  
 - 💡 Maintain a strong focus on **affordable housing** for mid-income families.  
@@ -349,6 +356,7 @@ A machine learning model was developed using **Linear Regression** to predict ho
 - 📊 **Evaluation Metrics**:
   - Mean Absolute Error (MAE)
   - R-squared score
+- 🎯 Model Accuracy: The Linear Regression model achieved an accuracy of 91.61%.
 
 ## 🚀 Deployment Using Flask API
 To make the model accessible, a **Flask API** was developed:
@@ -356,9 +364,7 @@ To make the model accessible, a **Flask API** was developed:
 - 🔄 **Integration**: The trained model was loaded using `joblib`.
 - ☁ **Hosting**: The API has been tested locally and deployed using Render & GitHub host.
 
-## 🎯 Live Demo
-You can check out the live demo of the deployed project here:
-🔗 [Live Demo Link](https://arifhossainrumi.github.io/) 
+
 
 ## 📌 Recommendations
 Based on the analysis and model performance, the following recommendations are made:
@@ -371,8 +377,8 @@ The following tools and technologies were used in this project:
 - 💻 **Programming Language**: Python
 - 📚 **Libraries**: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 - 🤖 **Machine Learning Model**: Linear Regression
-- 🌍 **Web Framework**: Flask
-- 📦 **Deployment**: Joblib for model persistence, Flask for API development
+- 🌍 **Web Framework**: Flask, Flutter
+- 📦 **Deployment**: Joblib for model persistence, Flask for API development, Render & Github for Hosting
 
 ---
 
