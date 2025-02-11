@@ -54,7 +54,7 @@ plt.show()
 ```
 
 #### 🖼️ Visualization:
-![House Rent Price Distribution](images/MonthlySales.png)
+![House Rent Price Distribution](Images/pic1.png)
 
 #### 🚀 Key Insights  
 - Most house rents in Dhaka are concentrated in the lower range.  
@@ -67,6 +67,22 @@ plt.show()
 ---
 
 ### 2️⃣ **Price Categories by Location**
+#### 📜 Code:
+```python
+plt.figure(figsize=(12, 6))
+top_locations = df1["Location"].value_counts().index[:10]  # Select top 10 locations
+sns.countplot(data=df1[df1["Location"].isin(top_locations)], x=df1["Price_Category"], hue="Location", palette="coolwarm")
+plt.xlabel("Price Category")
+plt.ylabel("Number of Listings")
+plt.title("Price Category Distribution by Location")
+plt.legend(title="Location", bbox_to_anchor=(1.05, 1), loc="upper left")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic2.png)
+
+#### 🚀 Key Insights 
 - **Block D, Mirpur** and **Sector 10, Uttara** are budget-friendly zones with many low-priced listings.  
 - **Dhanmondi** and **Mohammadpur** offer more medium to high-priced rentals.  
 - Luxury rentals are rare but present in **Dhanmondi** and **Paikpara Ahmed Nagar Mirpur**.  
@@ -77,7 +93,24 @@ plt.show()
 
 ---
 
-### 3️⃣ **Price per Square Foot Distribution**  
+### 3️⃣ **Price per Square Foot Distribution**
+
+#### 📜 Code:
+```python
+df1["Price_per_sqft"] = df1["Price"] / df1["Area"]
+
+plt.figure(figsize=(10, 5))
+sns.histplot(df1["Price_per_sqft"], bins=50, kde=True, color="purple")
+plt.xlabel("Price per sqft (BDT)")
+plt.ylabel("Frequency")
+plt.title("Distribution of Price per sqft")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic3.png)
+
+#### 🚀 Key Insights 
 - Most homes in Dhaka have rent prices below `50 BDT per square foot`.  
 - Prices above `100 BDT per square foot` are rare, indicating limited premium listings.  
 
@@ -86,7 +119,24 @@ plt.show()
 
 ---
 
-# 📊 Dhaka Rental Market Insights  
+### 📊 4 Dhaka Rental Market Insights
+
+#### 📜 Code:
+```python
+# Group by Location and calculate average rent
+location_rent = df1.groupby("Location")["Price"].mean().sort_values(ascending=False).head(20)  # Top 20 locations
+
+# Plot average rent per location
+plt.figure(figsize=(12, 6))
+sns.barplot(x=location_rent.values, y=location_rent.index, hue=location_rent.index, palette="viridis")
+plt.xlabel("Average Rent (Taka)")
+plt.ylabel("Location")
+plt.title("Top 20 Locations with Highest Average Rent in Dhaka")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic4.png)
 
 ## 🚀 Key Insights  
 - 🏡 **Most Expensive Areas:** Baridhara (Block K & J), Gulshan (1 & 2), and DOHS (Banani, Mohakhali, Baridhara) dominate high-end rentals.  
@@ -100,7 +150,23 @@ plt.show()
 
 ---
 
-# 📊 Real Estate Correlation Analysis  
+### 5 📊 Real Estate Correlation Analysis  
+
+#### 📜 Code:
+```python
+plt.figure(figsize=(8, 5))
+
+# Before creating the correlation heatmap, drop non-numeric columns like Location.
+# Selecting only numeric columns
+numeric_df = df1.select_dtypes(include=["number"])
+
+sns.heatmap(numeric_df.corr(), annot=True, cmap="coolwarm", linewidths=0.5)
+plt.title("Correlation Heatmap")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic5.png)
 
 ## 🚀 Key Insights  
 - 🏡 **Area, Bedrooms, and Bathrooms** are highly correlated (**0.75 - 0.81**) with **Price**, meaning bigger homes tend to cost more.  
@@ -114,7 +180,22 @@ plt.show()
 
 ---
 
-# 📊 Rent Price Distribution Analysis  
+### 6 📊 Rent Price Distribution Analysis  
+
+#### 📜 Code:
+```python
+# Plot number of bedrooms vs. rent price
+plt.figure(figsize=(8, 5))
+sns.boxplot(x=df1["Bed"], y=df1["Price"], hue=df1["Bath"], palette="coolwarm")
+plt.xlabel("Number of Bedrooms")
+plt.ylabel("Rent Price (Taka)")
+plt.title("Rent Price Distribution by Number of Bedrooms")
+plt.yscale("log")  # Apply log scale for better visualization
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic6.png)
 
 ## 🚀 Key Insights  
 - 🏡 **More Bedrooms = Higher Rent:** Rent generally increases with the number of bedrooms.  
@@ -129,7 +210,21 @@ plt.show()
 
 ---
 
-# 📊 Area vs. Rent Price in Dhaka
+### 7 📊 Area vs. Rent Price in Dhaka
+
+#### 📜 Code:
+```python
+# Scatter plot for Area vs. Rent Price
+plt.figure(figsize=(8, 5))
+sns.scatterplot(x=df1["Area"], y=df1["Price"], alpha=0.5, color="purple")
+plt.xlabel("Area (sqft)")
+plt.ylabel("Rent Price (Taka)")
+plt.title("Area vs. Rent Price in Dhaka")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic7.png)
 
 ## 🚀 Key Insights
 - 📏 **Bigger Space = Higher Rent:** Larger apartments generally have higher rent prices.
@@ -144,7 +239,22 @@ plt.show()
 
 ---
 
-# 📊 Price Variation Across Locations in Dhaka
+### 8 📊 Price Variation Across Locations in Dhaka
+
+#### 📜 Code:
+```python
+plt.figure(figsize=(12, 6))
+top_locations = df1["Location"].value_counts().index[:10]  # Select top 10 locations
+sns.boxplot(data=df1[df1["Location"].isin(top_locations)], x="Location", y="Price",color="blue")
+plt.xticks(rotation=90)
+plt.xlabel("Location")
+plt.ylabel("Price (BDT)")
+plt.title("Price Variation Across Locations")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic8.png)
 
 ## 🚀 Key Insights
 - 🏙 **Location Matters:** Rent prices vary significantly based on location.
@@ -159,7 +269,22 @@ plt.show()
 
 ---
 
-# 📊 Trend of Rent Prices by Apartment Size
+### 9 📊 Trend of Rent Prices by Apartment Size
+
+#### 📜 Code:
+```python
+area_groups = df1.groupby("Area")["Price"].mean().sort_index()
+
+plt.figure(figsize=(12, 6))
+sns.lineplot(x=area_groups.index, y=area_groups.values, marker="o")
+plt.xlabel("Area (sqft)")
+plt.ylabel("Average Rent Price (BDT)")
+plt.title("Trend of Rent Prices by Apartment Size")
+plt.show()
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic9.png)
 
 ## 🚀 Key Insights
 - 📈 **Larger Apartments = Higher Rent:** Rent prices tend to increase as apartment size grows.
@@ -173,6 +298,41 @@ plt.show()
 - ✅ **Steep Rent Growth Beyond 3000 sqft**
 
 ---
+
+### 10 📊 House Rent Analysis - by location
+#### 📜 Code:
+```python
+def plot_scatter_chart(df,Location):
+    bed2 = df1[(df1.Location==Location) & (df1.Bed==2)]
+    bed3 = df1[(df1.Location==Location) & (df1.Bed==3)]
+    matplotlib.rcParams['figure.figsize'] = (15,10)
+    plt.scatter(bed2.Area,bed2.Price,color='blue',label='2 Bed', s=50)
+    plt.scatter(bed3.Area,bed3.Price,marker='+', color='red',label='3 Bed', s=50)
+    plt.xlabel("Total Square Feet Area")
+    plt.ylabel("Price (BDT)")
+    plt.title(Location)
+    plt.legend()
+    plt.show()
+
+plot_scatter_chart(df3,"Mirpur Dhaka")
+```
+
+#### 🖼️ Visualization:
+![House Rent Price Distribution](Images/pic10.png)
+
+#### 🚀 Key Insights 
+This visualization shows rental prices in Mirpur, Dhaka, based on apartment size (square feet) and the number of bedrooms.
+
+- 🏡 Rent Increases with Size – Larger apartments generally have higher rent prices.
+- 🛏️ 2-Bed vs. 3-Bed Trends – 3-bedroom apartments (red) tend to have higher prices than 2-bedroom ones (blue).
+- 📊 Dense Clusters at 600-1000 sqft – Most 2-bedroom apartments fall within this range, while 3-bedroom ones are more spread out.
+- 📈 Higher Variability in Larger Apartments – Rent prices vary significantly for bigger apartments, indicating diverse pricing factors.
+
+#### 🔍 Key Takeaways
+- ✅ Larger Apartments Cost More
+- ✅ 3-Bedroom Flats Are Generally Pricier
+- ✅ Rent Prices Are More Predictable for Smaller Units
+- ✅ Pricing for Larger Apartments Is Less Consistent
 
 ## 📈 Recommendations  
 - 💡 Encourage investment in **premium housing** to address the limited high-end market.  
